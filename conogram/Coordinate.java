@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* Coordinate.java
  * PURPOSE: Encapsulates a position on the grid (row, column)
  * OOP CONCEPTS: Encapsulation, Data Hiding

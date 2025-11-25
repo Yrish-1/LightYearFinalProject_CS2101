@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* Mark.java
  * PURPOSE: Represents different types of marks that can be placed on the grid
  * OOP CONCEPTS: Abstraction, Inheritance, Polymorphism

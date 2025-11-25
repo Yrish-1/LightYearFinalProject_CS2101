@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* InputHandler.java
  * PURPOSE: Handles all user input
  * OOP CONCEPTS: Encapsulation, Single Responsibility

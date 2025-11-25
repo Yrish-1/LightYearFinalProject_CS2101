@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* MenuDisplay.java
  * PURPOSE: Handles all console output/display logic
  * OOP CONCEPTS: Single Responsibility Principle, Encapsulation

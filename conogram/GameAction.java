@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* GameAction.java
  * PURPOSE: Defines actions that can be performed in the game
  * OOP CONCEPTS: Abstraction (Interface), Polymorphism

@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* TO-DO
 * 1. set DrawPuzzle to private; add getters and setters
 * 2. separate method for showing puzzle solutions (for debugging)

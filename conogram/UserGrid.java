@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* UserGrid.java
  * PURPOSE: Manages the user's marking grid
  * OOP CONCEPTS: Encapsulation, Data Hiding

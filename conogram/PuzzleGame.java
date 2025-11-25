@@ -1,4 +1,4 @@
-package Nonogram;
+package conogram;
 /* PuzzleGame.java
  * PURPOSE: Main game controller - orchestrates all components
  * OOP CONCEPTS: Composition, Encapsulation
