@@ -42,6 +42,8 @@ public class PuzzleGame {
         actions.put("O", new MarkAction(new MarkO()));
         actions.put("/", new MarkAction(new MarkFilled()));
         actions.put("C", new ClearAction());
+        actions.put("S", new ShowSolutionAction(puzzleFlow));
+        actions.put("K", new CheckSolutionAction(puzzleFlow));
 
         // TODO: Add these actions (your groupmate implements)
         // actions.put("S", new ShowSolutionAction(puzzleFlow));

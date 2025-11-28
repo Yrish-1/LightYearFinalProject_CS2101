@@ -19,7 +19,9 @@ class MenuDisplay {
         System.out.println("[/] Fill Square");
         System.out.println("[C] Clear");
         System.out.println("[S] Show Solution"); // TODO: Implement this action
+        System.out.println("[K] Check Solution");
         System.out.println("[R] Return");
+
     }
 
     // Generic message display

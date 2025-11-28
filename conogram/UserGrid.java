@@ -66,21 +66,68 @@ class UserGrid {
         return cols;
     }
 
-    // TODO for groupmate: Implement these methods
+    public boolean checkSolution(int[][] solution) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                int cellValue = grid[i][j].getValue();
+                int solutionValue = solution[i][j];
 
-    // TODO: Check if user's grid matches the solution
-    // public boolean checkSolution(int[][] solution) {
-    // // Compare grid with solution
-    // // Return true if they match
-    // }
+                if (solutionValue == 1) {
+                    // Should be filled (MarkFilled=3 or MarkX=1)
+                    if (cellValue != 3 && cellValue != 1) {
+                        return false;
+                    }
+                } else {
+                    // Should NOT be filled (MarkEmpty=0 or MarkO=2)
+                    if (cellValue == 3 || cellValue == 1) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 
-    // TODO: Count how many cells are filled (not empty)
-    // public int countFilledCells() {
-    // // Loop through grid and count non-empty cells
-    // }
+    // Count how many cells are filled (not empty)
+    public int countFilledCells() {
+        int count = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j].getValue() != 0) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 
-    // TODO: Reset the entire grid to empty
-    // public void reset() {
-    // // Set all cells back to MarkEmpty
-    // }
+    // Reset the entire grid to empty
+    public void reset() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                grid[i][j] = new MarkEmpty();
+            }
+        }
+        System.out.println("Grid has been reset!");
+    }
+
 }
+
+// TODO for groupmate: Implement these methods
+
+// TODO: Check if user's grid matches the solution
+// public boolean checkSolution(int[][] solution) {
+// // Compare grid with solution
+// // Return true if they match
+// }
+
+// TODO: Count how many cells are filled (not empty)
+// public int countFilledCells() {
+// // Loop through grid and count non-empty cells
+// }
+
+// TODO: Reset the entire grid to empty
+// public void reset() {
+// // Set all cells back to MarkEmpty
+// }
+// }

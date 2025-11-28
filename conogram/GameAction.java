@@ -62,6 +62,87 @@ class ClearAction implements GameAction {
     }
 }
 
+class ShowSolutionAction implements GameAction {
+    private PuzzleFlow puzzleFlow;
+    private boolean isShowing;
+
+    public ShowSolutionAction(PuzzleFlow puzzleFlow) {
+        this.puzzleFlow = puzzleFlow;
+        this.isShowing = false;
+    }
+
+    @Override
+    public void execute(UserGrid grid, InputHandler input, MenuDisplay display) {
+        // Toggle the visibility
+        isShowing = !isShowing;
+
+        if (isShowing) {
+            display.showMessage("\n=== SOLUTION (Cheat Mode ON) ===");
+            displaySolution();
+            display.showMessage("================================\n");
+        } else {
+            display.showMessage("Solution hidden.");
+        }
+    }
+
+    // Helper method to display the solution
+    private void displaySolution() {
+        int[][] solution = puzzleFlow.getPuzzle();
+
+        System.out.println("Solution Grid:");
+        for (int i = 0; i < solution.length; i++) {
+            for (int j = 0; j < solution[i].length; j++) {
+                if (solution[i][j] == 1) {
+                    System.out.print("■ "); // Filled square
+                } else {
+                    System.out.print(". "); // Empty square
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+class CheckSolutionAction implements GameAction {
+    private PuzzleFlow puzzleFlow;
+
+    public CheckSolutionAction(PuzzleFlow puzzleFlow) {
+        this.puzzleFlow = puzzleFlow;
+    }
+
+    @Override
+    public void execute(UserGrid grid, InputHandler input, MenuDisplay display) {
+        display.showMessage("\n🔍 Checking your solution...\n");
+
+        int[][] solution = puzzleFlow.getPuzzle();
+        boolean isCorrect = grid.checkSolution(solution);
+
+        if (isCorrect) {
+            // User solved it correctly!
+            display.showMessage("╔════════════════════════════════╗");
+            display.showMessage("║  🎉 CONGRATULATIONS! 🎉       ║");
+            display.showMessage("║  You solved the puzzle!        ║");
+            display.showMessage("╚════════════════════════════════╝");
+
+            // Show some stats
+            int filled = grid.countFilledCells();
+            int total = grid.getRows() * grid.getCols();
+            display.showMessage("Cells filled: " + filled + "/" + total);
+
+        } else {
+            // Not quite right yet
+            display.showMessage("❌ Not quite right yet!");
+            display.showMessage("💡 Hint: Check your marks carefully.");
+            display.showMessage("   Remember: Fill (■) or X for 1s, Empty (.) or O for 0s\n");
+
+            // Show progress
+            int filled = grid.countFilledCells();
+            int total = grid.getRows() * grid.getCols();
+            display.showMessage("Progress: " + filled + "/" + total + " cells marked");
+        }
+    }
+}
+
 // TODO: Implement this action
 // class ShowSolutionAction implements GameAction {
 // private PuzzleFlow puzzleFlow;
