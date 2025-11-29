@@ -27,8 +27,7 @@ class MarkAction implements GameAction {
 
     @Override
     public void execute(UserGrid grid, InputHandler input, MenuDisplay display) {
-        Coordinate coord = input.getCoordinate();
-
+        Coordinate coord = input.getCoordinate(grid.getRows(), grid.getCols());
         if (coord == null) {
             display.showMessage("Please enter valid numbers!");
             return;
@@ -46,7 +45,7 @@ class MarkAction implements GameAction {
 class ClearAction implements GameAction {
     @Override
     public void execute(UserGrid grid, InputHandler input, MenuDisplay display) {
-        Coordinate coord = input.getCoordinate();
+        Coordinate coord = input.getCoordinate(grid.getRows(), grid.getCols()); // ✅ FIXED
 
         if (coord == null) {
             display.showMessage("Please enter valid numbers!");

@@ -50,47 +50,88 @@ public class PuzzleGame {
         // actions.put("H", new HintAction(puzzleFlow));
     }
 
+    private void showWelcome() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     WELCOME TO NONOGRAM PUZZLE!       ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("\n📋 HOW TO PLAY:");
+        System.out.println("   • Fill squares that should be marked (1 in solution)");
+        System.out.println("   • Use X or ■ for filled squares");
+        System.out.println("   • Use O or leave empty for blank squares");
+        System.out.println("   • Goal: Match the hidden pattern!\n");
+
+        System.out.println("Grid size: " + userGrid.getRows() + "x" + userGrid.getCols());
+        System.out.println("Total cells: " + (userGrid.getRows() * userGrid.getCols()));
+        System.out.println("\nGood luck! 🍀\n");
+    }
+
+    private void showProgress() {
+        int filled = userGrid.countFilledCells();
+        int total = userGrid.getRows() * userGrid.getCols();
+        int percentage = (int) ((filled / (double) total) * 100);
+
+        System.out.println("\n📊 Progress: " + filled + "/" + total + " cells (" + percentage + "%)");
+    }
+
+    // ===== NEW: Auto-check if puzzle is solved =====
+    private boolean checkAutoWin() {
+        int[][] solution = puzzleFlow.getPuzzle();
+        return userGrid.checkSolution(solution);
+    }
+
     public void start() {
-        menuDisplay.showMessage("Welcome to Nonogram Puzzle!");
-        // TODO: Show instructions
+        showWelcome(); // Show welcome message
 
         boolean running = true;
 
         while (running) {
+            userGrid.display(); // Show current grid state
+            showProgress(); // Show progress
+
             menuDisplay.showMainMenu();
             String choice = inputHandler.getMenuChoice();
 
             if (choice.equals("R")) {
-                menuDisplay.showMessage("Returning...");
-                running = false;
+                // User wants to quit
+                if (inputHandler.getConfirmation("Are you sure you want to quit?")) {
+                    menuDisplay.showMessage("\n👋 Thanks for playing! Goodbye!");
+                    running = false;
+                }
             } else if (actions.containsKey(choice)) {
+                // Execute the chosen action
                 actions.get(choice).execute(userGrid, inputHandler, menuDisplay);
-                userGrid.display();
 
-                // TODO: Check if puzzle is solved after each action
-                // if (userGrid.checkSolution(puzzleFlow.getPuzzle())) {
-                // menuDisplay.showMessage("Congratulations! You solved it!");
-                // // TODO: Show score and time
-                // running = false;
-                // }
+                // ===== AUTO WIN-CHECK (after marking actions only) =====
+                if (choice.equals("X") || choice.equals("/")) {
+                    if (checkAutoWin()) {
+                        // Player won!
+                        System.out.println("\n");
+                        userGrid.display();
+                        System.out.println("\n╔════════════════════════════════════════╗");
+                        System.out.println("║        🎉 CONGRATULATIONS! 🎉         ║");
+                        System.out.println("║     YOU SOLVED THE PUZZLE! 🏆         ║");
+                        System.out.println("╚════════════════════════════════════════╝\n");
+
+                        showProgress();
+
+                        if (inputHandler.getConfirmation("Play again?")) {
+                            // Reset the grid for a new game
+                            userGrid.reset();
+                            menuDisplay.showMessage("\n🔄 Starting new game...\n");
+                        } else {
+                            running = false;
+                            menuDisplay.showMessage("\n👋 Thanks for playing!");
+                        }
+                    }
+                }
 
             } else {
-                menuDisplay.showMessage("Invalid option. Please try again.");
+                menuDisplay.showMessage("❌ Invalid option. Please try again.");
             }
         }
     }
 
-    // TODO: Implement these methods
-
-    // TODO: Calculate score based on time and mistakes
-    // private int calculateScore() { ... }
-
-    // TODO: Show hint (reveal one correct cell)
-    // public void showHint() { ... }
-
-    // TODO: Save game state
-    // public void saveGame() { ... }
-
+    // Clean up resources
     public void cleanup() {
         inputHandler.close();
     }

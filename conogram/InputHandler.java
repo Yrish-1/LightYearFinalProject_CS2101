@@ -71,6 +71,21 @@ class InputHandler {
         }
     }
 
+    public boolean getConfirmation(String prompt) {
+        while (true) {
+            System.out.print(prompt + " (Y/N): ");
+            String input = scanner.nextLine().trim().toUpperCase();
+
+            if (input.equals("Y") || input.equals("YES")) {
+                return true;
+            } else if (input.equals("N") || input.equals("NO")) {
+                return false;
+            } else {
+                System.out.println("⚠️  Please enter Y or N");
+            }
+        }
+    }
+
     public void close() {
         scanner.close();
     }
