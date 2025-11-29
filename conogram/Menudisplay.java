@@ -33,4 +33,17 @@ class MenuDisplay {
     // public void showWelcome() { ... }
     // public void showGameOver() { ... }
     // public void showScore(int score) { ... }
+    
+    public void showWelcome() {
+    System.out.println("🎉 Welcome to the Puzzle Game! 🎉");
+    }
+
+    public void showGameOver() {
+        System.out.println("🛑 Game Over! Thanks for playing.");
+    }
+
+    public void showScore(int score) {
+        System.out.println("🏆 Your score: " + score);
+    }
+
 }
