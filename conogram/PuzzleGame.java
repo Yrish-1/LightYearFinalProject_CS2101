@@ -21,6 +21,11 @@ public class PuzzleGame {
     // private long startTime;
     // private boolean solutionVisible;
 
+    private int score;                 // track player score
+    private long startTime;            // track start time
+    private boolean solutionVisible;   // track if solution is currently shown
+
+
     public PuzzleGame(PuzzleFlow puzzleFlow) {
         this.puzzleFlow = puzzleFlow;
 
@@ -35,6 +40,10 @@ public class PuzzleGame {
         // TODO: Initialize score and timer
         // this.score = 0;
         // this.startTime = System.currentTimeMillis();
+
+        this.score = 0;
+        this.startTime = System.currentTimeMillis();
+        this.solutionVisible = false; // default to not showing solution
     }
 
     private void initializeActions() {
@@ -48,6 +57,22 @@ public class PuzzleGame {
         // TODO: Add these actions (your groupmate implements)
         // actions.put("S", new ShowSolutionAction(puzzleFlow));
         // actions.put("H", new HintAction(puzzleFlow));
+    }
+
+    private void toggleSolutionVisibility() {
+        solutionVisible = !solutionVisible;
+        if (solutionVisible) {
+            menuDisplay.showMessage("\n🔎 Showing solution (cheat mode ON)");
+            puzzleFlow.showSolution();
+        } else {
+            menuDisplay.showMessage("🔒 Solution hidden");
+        }
+    }
+
+    // Optional: Display score and elapsed time
+    private void showStats() {
+        long elapsedSeconds = (System.currentTimeMillis() - startTime) / 1000;
+        menuDisplay.showMessage("Score: " + score + " | Time: " + elapsedSeconds + " seconds");
     }
 
     private void showWelcome() {

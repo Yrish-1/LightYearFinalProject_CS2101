@@ -48,4 +48,28 @@ public class PuzzleFlow {
     public int SolveToggle() {
         return 1;
     }
+
+    // TODO 2: separate method for showing puzzle solutions (for debugging)
+    public void showSolution() {
+        if (puzzleInstance == null) return;
+        System.out.println("\n--- Puzzle Solution ---");
+        for (int i = 0; i < puzzleInstance.length; i++) {
+            for (int j = 0; j < puzzleInstance[i].length; j++) {
+                System.out.print(puzzleInstance[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("-----------------------\n");
+    }
+
+    // TODO 3: implement SolveToggle properly
+    private boolean isSolved = false; // track solved state
+
+    public void toggleSolve() {
+        isSolved = !isSolved;
+    }
+
+    public boolean getSolveState() {
+        return isSolved;
+    }
 }
