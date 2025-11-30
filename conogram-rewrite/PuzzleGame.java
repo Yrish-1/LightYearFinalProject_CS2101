@@ -51,6 +51,7 @@ public class PuzzleGame {
                 if (newPuzzle.compareAnswer() == true) {
                     solved = true;
                 }
+                newPuzzle.displayInstance();
                 break;
             // MODE 2: Daily Challenge
              case 2:
@@ -87,6 +88,7 @@ public class PuzzleGame {
                 if (dailyPuzzle.compareAnswer() == true) {
                     solved = true;
                 }
+                dailyPuzzle.displayInstance();
                 break; 
         }
 
