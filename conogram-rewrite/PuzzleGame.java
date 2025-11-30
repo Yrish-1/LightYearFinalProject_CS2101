@@ -48,7 +48,7 @@ public class PuzzleGame {
                         newPuzzle.setCell(row, col, mark);
                     }
 
-                } while (newPuzzle.compareAnswer() == false && quit == false);
+                } while (newPuzzle.compareAnswer() == false);
                 if (newPuzzle.compareAnswer() == true) {
                     solved = true;
                 }
@@ -85,7 +85,7 @@ public class PuzzleGame {
                         }
                         dailyPuzzle.setCell(row, col, mark);
                     }
-                } while (dailyPuzzle.compareAnswer() == false && quit == false);
+                } while (dailyPuzzle.compareAnswer() == false);
                 if (dailyPuzzle.compareAnswer() == true) {
                     solved = true;
                 }
