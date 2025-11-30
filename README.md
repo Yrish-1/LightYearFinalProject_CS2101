@@ -332,19 +332,19 @@ Row →  2 1[■][ ][■][ ][ ][ ][ ][ ][ ][ ] 1
 ### Sample Output
 
 <p align="center">
-  <img src="Images/sample1.png" width="100%" />
+  <img src="Images/sample1.png" width="90%" />
 </p>
 
 <p align="center">
-  <img src="Images/sample2.png" width="100%" />
+  <img src="Images/sample2.png" width="90%" />
 </p>
 
 <p align="center">
-  <img src="Images/sample3.png" width="100%" />
+  <img src="Images/sample3.png" width="90%" />
 </p>
 
 <p align="center">
-  <img src="Images/sample4.png" width="100%" />
+  <img src="Images/sample4.png" width="90%" />
 </p>
  
 
