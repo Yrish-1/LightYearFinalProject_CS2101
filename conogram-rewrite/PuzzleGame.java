@@ -35,14 +35,16 @@ public class PuzzleGame {
 
                     if (row != -1 && col != -1) {
                         newPuzzle.displayInstanceHighlighted(row, col);
-                        System.out.print("\nWhat would you like to do with this cell?\n[1] Fill\t\t[3] Cross Out\n[2] Mark as Possible\t[4] Clear Cell\n[5] Quit\t\tEnter your choice: ");
+                        System.out.print("\nWhat would you like to do with this cell?\n[1] Fill\t\t[3] Cross Out\n[2] Mark as Possible\t[4] Clear Cell\nEnter your choice: ");
                         int mark = input.getValidateInput();
 
-                        if (mark == 5) {
-                            quit = true;
-                        } else {
-                            newPuzzle.setCell(row, col, mark);
+                        while (InputHandler.intValidation(mark, 1, 4) == false || mark == -1) {
+                            if (mark != -1) {
+                                System.out.print("Invalid input, please try again: ");
+                            }
+                            mark = input.getValidateInput();
                         }
+                        newPuzzle.setCell(row, col, mark);
                     }
 
                 } while (newPuzzle.compareAnswer() == false && quit == false);
@@ -68,16 +70,17 @@ public class PuzzleGame {
 
                     if (row != -1 && col != -1) {
                         dailyPuzzle.displayInstanceHighlighted(row, col);
-                        System.out.print("\nWhat would you like to do with this cell?\n[1] Fill\t\t[3] Cross Out\n[2] Mark as Possible\t[4] Clear Cell\n[5] Quit\t\tEnter your choice: ");
+                        System.out.print("\nWhat would you like to do with this cell?\n[1] Fill\t\t[3] Cross Out\n[2] Mark as Possible\t[4] Clear Cell\nEnter your choice: ");
                         int mark = input.getValidateInput();
 
-                        if (mark == 5) {
-                            quit = true;
-                        } else {
-                            dailyPuzzle.setCell(row, col, mark);
+                        while (InputHandler.intValidation(mark, 1, 4) == false || mark == -1) {
+                            if (mark != -1) {
+                                System.out.print("Invalid input, please try again: ");
+                            }
+                            mark = input.getValidateInput();
                         }
+                        dailyPuzzle.setCell(row, col, mark);
                     }
-
                 } while (dailyPuzzle.compareAnswer() == false && quit == false);
                 break; 
         }
