@@ -4,9 +4,7 @@ public class Main {
         int mode;
         int warn = 0;
 
-        // menu WIP!
-        System.out.print("CONOGRAMS\nSelect mode:\n\n\t\t[1] Regular Mode\n\t\t[2] Daily Puzzle\n\n\nEnter your choice: ");
-
+        System.out.print("[CONOGRAMS]======================\nWelcome, Player!\nPlease select a mode:\n\n\t[1] Regular Mode\n\t[2] Daily Puzzle\n\nEnter your choice: ");
         do {
             if (warn == 1) {
                 System.out.print("Invalid input, please try again: ");
@@ -23,5 +21,7 @@ public class Main {
 
         PuzzleGame newGame = new PuzzleGame(mode);
         newGame.gameInstance();
+
+        System.out.println("Thank you for playing our game! <3");
     }
 }
