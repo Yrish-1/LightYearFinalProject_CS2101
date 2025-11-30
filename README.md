@@ -331,9 +331,22 @@ Row →  2 1[■][ ][■][ ][ ][ ][ ][ ][ ][ ] 1
 
 ### Sample Output
 
-1. 
-2. 
-3. 
+<p align="center">
+  <img src="Images/sample1.png" width="100%" />
+</p>
+
+<p align="center">
+  <img src="Images/sample2.png" width="100%" />
+</p>
+
+<p align="center">
+  <img src="Images/sample3.png" width="100%" />
+</p>
+
+<p align="center">
+  <img src="Images/sample4.png" width="100%" />
+</p>
+ 
 
 ---
 
@@ -350,28 +363,29 @@ This project represents original work by the team members listed above. All code
     <th> Role </th>
 </tr>
 <tr>
-    <td><img src="link" width="100" height="100"> </td>
-    <td><strong>Rei</strong> <br/>
-    <a href="https://github.com/Bunnrei" target="_blank">
-    <img src="link" alt="rei GitHub">
+    <td><img src="Images/Rei.png" width="100" height="100"></td>
+    <td>
+        <strong>Rei</strong> <br/>
+        <a href="https://github.com/Bunnrei" target="_blank">
+            <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="Rei GitHub">
         </a>
     </td>
     <td>Project Leader</td>
 </tr>
 <tr>
-    <td><img src="pic" width="100" height="100"> </td>
+    <td><img src="Images/Yrish.png" width="100" height="100"> </td>
     <td><strong>Yrish</strong> <br/>
     <a href="https://github.com/Yrish-1" target="_blank">
-    <img src="LightYearFinalProject_CS2101/Images/Github.png" alt="rish GitHub">
+    <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="Rei GitHub">
         </a>
     </td>
     <td>Member</td>
 </tr>
 <tr>
-    <td><img src="image" width="100" height="100"> </td>
+    <td><img src="Images/Ronjae.png" width="100" height="100"> </td>
     <td><strong>Ronjae</strong> <br/>
     <a href="https://github.com/ronjae-calvin-gregorio" target="_blank">
-    <img src="link" alt="jae GitHub">
+    <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="Rei GitHub">
         </a>
     </td>
     <td>Member</td>
