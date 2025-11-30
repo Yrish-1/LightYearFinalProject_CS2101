@@ -12,6 +12,7 @@ public class PuzzleGame {
 
     public void gameInstance() {
         InputHandler input = new InputHandler();
+        boolean solved = false;
         int row, col;
         switch (mode) {
             // MODE 1: Regular Game
@@ -48,6 +49,9 @@ public class PuzzleGame {
                     }
 
                 } while (newPuzzle.compareAnswer() == false && quit == false);
+                if (newPuzzle.compareAnswer() == true) {
+                    solved = true;
+                }
                 break;
             // MODE 2: Daily Challenge
              case 2:
@@ -82,7 +86,14 @@ public class PuzzleGame {
                         dailyPuzzle.setCell(row, col, mark);
                     }
                 } while (dailyPuzzle.compareAnswer() == false && quit == false);
+                if (dailyPuzzle.compareAnswer() == true) {
+                    solved = true;
+                }
                 break; 
+        }
+
+        if (solved == true) {
+            System.out.println("Congratulations! You've solved the puzzle!");
         }
     }
 }
