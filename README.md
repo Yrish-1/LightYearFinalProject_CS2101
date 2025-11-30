@@ -19,7 +19,7 @@ CONOGRAMS is a logic puzzle game where players fill in squares on a 10×10 grid 
 ---
 ## 📁 Project Structure
 ```
-LightYearFinalProject_CS2101/
+LightYearFinalProject_CS2101/conograms-rewrite
 │
 ├── Main.java              # Entry point + mode selection menu
 ├── PuzzleGame.java        # Game flow controller
@@ -69,8 +69,8 @@ Column hints:  5         means "5 consecutive filled cells"
 ### Example Puzzle
 ```
 Hints:           Column hints
-              3   1 2   4 1
-              ↓   ↓ ↓   ↓ ↓
+              3  1  2  4  1
+              ↓  ↓  ↓  ↓  ↓
          2 1 [■][ ][■][ ][ ]  ← Row hint: 2, 1
            3 [■][■][■][ ][ ]  ← Row hint: 3
          1 1 [ ][■][ ][■][ ]  ← Row hint: 1, 1
@@ -318,8 +318,8 @@ dailyPuzzle.createPuzzle();  // Calls DailyPuzzle's version
 
 ### Hint Display Format
 ```
-          1   2   3   4   5   6   7   8   9   10
-          ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓
+           1  2  3  4  5  6  7  8  9  10
+           ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
 Row →  2 1[■][ ][■][ ][ ][ ][ ][ ][ ][ ] 1
        3  [■][■][■][ ][ ][ ][ ][ ][ ][ ] 2
 ```
