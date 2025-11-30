@@ -20,7 +20,6 @@ public class PuzzleGame {
                 PuzzleLogic newPuzzle = new PuzzleLogic();
                 newPuzzle.createPuzzle();
                 newPuzzle.newInstance();
-                boolean quit = false;   // quit variable
                 do {
                     System.out.print("\n========[CONOGRAMS: Regular Mode]========");
                     newPuzzle.displayInstance();
@@ -58,7 +57,6 @@ public class PuzzleGame {
                 PuzzleLogic dailyPuzzle = new DailyPuzzle();
                 dailyPuzzle.createPuzzle();
                 dailyPuzzle.newInstance();
-                quit = false;   // quit variable
                 do {
                     System.out.print("\n========[CONOGRAMS: Daily Puzzle]========");
                     dailyPuzzle.displayInstance();
