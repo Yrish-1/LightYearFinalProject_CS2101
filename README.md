@@ -85,7 +85,7 @@ Match all filled cells (■) to the solution. Marks like O and X are ignored in 
 
 1. **Download/Clone the project**
 ```bash
-   cd LightYearFinalProject_CS2101
+   cd LightYearFinalProject_CS2101\conogram-rewrite
 ```
 
 2. **Compile all Java files**
@@ -296,14 +296,7 @@ public void displayInstance() {
 - Complex operations hidden behind simple interfaces
 - Implementation details not exposed
 
-### 4. **Modularity**
-- Separate classes for distinct responsibilities:
-  - `PuzzleLogic` → Game logic
-  - `PuzzleGame` → Game flow
-  - `InputHandler` → Input validation
-  - `Main` → Menu system
-
-### 5. **Polymorphism**
+### 4. **Polymorphism**
 ```java
 PuzzleLogic dailyPuzzle = new DailyPuzzle();
 dailyPuzzle.createPuzzle();  // Calls DailyPuzzle's version
@@ -312,44 +305,6 @@ dailyPuzzle.createPuzzle();  // Calls DailyPuzzle's version
 - `createPuzzle()` behaves differently for regular vs daily mode
 
 ---
-
-
-## 📝 Documentation and Sample Output
-
-### Hint Display Format
-```
-           1  2  3  4  5  6  7  8  9  10
-           ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
-Row →  2 1[■][ ][■][ ][ ][ ][ ][ ][ ][ ] 1
-       3  [■][■][■][ ][ ][ ][ ][ ][ ][ ] 2
-```
-
-- Column hints display at top (5 rows for multi-number hints)
-- Row hints display on left (up to 9 characters)
-- Grid is 10×10 with brackets around each cell
-- Row/column numbers on edges for easy reference
-
-### Sample Output
-
-<p align="center">
-  <img src="Images/sample1.png" width="90%" />
-</p>
-
-<p align="center">
-  <img src="Images/sample2.png" width="90%" />
-</p>
-
-<p align="center">
-  <img src="Images/sample3.png" width="90%" />
-</p>
-
-<p align="center">
-  <img src="Images/sample4.png" width="90%" />
-</p>
- 
-
----
-
 ### Academic Integrity
 This project represents original work by the team members listed above. All code and algorithms are developed specifically for this course.
 
