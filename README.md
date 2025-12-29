@@ -339,7 +339,7 @@ This project represents original work by the team members listed above. All code
 <tr>
     <td><img src="Images/Ronjae.png" width="100" height="100"> </td>
     <td><strong>Ronjae</strong> <br/>
-    <a href="https://github.com/ronjae-calvin-gregorio" target="_blank">
+    <a href="https://github.com/Ronjae-Calvin1" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="Rei GitHub">
         </a>
     </td>
